@@ -1,0 +1,56 @@
+
+<div class="row title">
+  <h3 style="margin:0px;">Update User details</h3>
+</div>
+<div class="row">
+  <h6 class="col-md-offset-7 col-md-4" style="padding:0px 0px 10px 15px"> All fields are mandatory </h6>
+</div>
+<form #ediUserForm="ngForm" (ngSubmit)="submitForm();" novalidate>
+  <div class="form-horizontal">
+    <div class="form-group">
+      <div class="col-md-5" style="text-align:left; padding-top:8px"><label>User name</label></div>
+      <div class="col-md-3"><input type="text" name="name" [(ngModel)]="username" class="form-control qkinput" #name="ngModel" required></div>
+      <div class="col-md-3" *ngIf="name.errors && (name.dirty || name.touched)" style="text-align:left; padding-top:5px; color:red;">
+        <div [hidden]="!name.errors.required">
+          <p> &nbsp;User name is mandatory</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-5" style="text-align:left; padding-top:8px"><label>Email Id</label></div>
+      <div class="col-md-3"><input type="text" name="catid" [(ngModel)]="emailid" class="form-control qkinput" #catid="ngModel"></div>
+      <div class="col-md-3" *ngIf="catid.errors && (catid.dirty || catid.touched)" style="text-align:left; padding-top:5px; color:red;">
+        <div [hidden]="!catid.errors.required">
+          <p>&nbsp;Email is mandatory</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-5" style="text-align:left; padding-top:8px"><label>Role Type</label></div>
+      <div class="col-md-3"><input type="text" name="prodprice" [(ngModel)]="roletype" class="form-control qkinput" #prodprice="ngModel"></div>
+      <div class="col-md-3" *ngIf="prodprice.errors && (prodprice.dirty || prodprice.touched)" style="text-align:left; padding-top:5px; color:red;">
+        <div [hidden]="!prodprice.errors.required">
+          <p>&nbsp;Role Type is mandatory</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-5" style="text-align:left; padding-top:8px"><label>Status</label></div>
+      <div class="col-md-3"><input type="text" name="qtyAvail" [(ngModel)]="status" class="form-control qkinput" #qtyAvail="ngModel" min="0"s></div>
+      <div class="col-md-3" *ngIf="qtyAvail.errors && (qtyAvail.dirty || qtyAvail.touched)" style="text-align:left; padding-top:5px; color:red;">
+        <div [hidden]="!qtyAvail.errors.required">
+          <p>&nbsp;Status is mandatory</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-offset-5 col-md-6">
+        <button type="submit" class="btn">Save User</button>&nbsp;&nbsp;
+        <a routerLink="/home" routerLinkActive="active">Cancel</a>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="row">
+  <label class="successMsg col-md-offset-5 col-md-6" *ngIf="status">User updated successfully!</label>
+</div>

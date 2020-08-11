@@ -1,0 +1,28 @@
+<div style="text-align:center;">
+  <h1>List of Users </h1>
+  <div class="table-responsive">
+    <table class="table" style="border:5px rgba(220,230,242,1);" *ngIf="users;else ShowMsg">
+      <tr style="background-color:rgba(220,230,242,1); font-size:12pt;">
+        <th style="text-align:center">User Id</th>
+        <th style="text-align:center">User Name</th>
+        <th style="text-align:center">Email Id</th>
+        <th style="text-align:center">Role</th>
+        <th style="text-align:center">Status</th>
+        <th colspan="2">Admin Action(s)</th>
+      </tr>
+      <tr *ngFor="let user of users" style="background-color:white">
+        <td style="text-align:center">{{ user.UserId }}</td>
+        <td style="text-align:center">{{ user.UserName }}</td>
+        <td style="text-align:center">{{ user.EmailId }}</td>
+        <td style="text-align:center">{{ user.Role }}</td>
+        <td style="text-align: center">{{ user.status }}</td>
+        <td> <button (click)="editUser(user)" class="btn" style="background-color:rgba(220,230,242,1)">Edit</button> </td>
+        <td> <button (click)="deleteUser(user)" class="btn" style="background-color:rgba(220,230,242,1)">Delete</button> </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<ng-template #ShowMsg>
+  <h4 class="jumbotron" style="text-align:center; font-size:16pt;">Loading...</h4>
+</ng-template>
+

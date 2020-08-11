@@ -1,0 +1,36 @@
+
+<br />
+<div class="row">
+  <h3 style="margin:0px;">User details that you are about to delete:</h3>
+</div>
+<br />
+<div class="form-horizontal">
+  <div class="form-group">
+    <div class="col-md-3" style="text-align:left"><label>UserId</label></div>
+    <div class="col-md-4"><label>{{user.UserId}}</label></div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-3" style="text-align:left"><label>User Name</label></div>
+    <div class="col-md-4"><label>{{user.UserName}}</label></div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-3" style="text-align:left"><label>EmailId</label></div>
+    <div class="col-md-4"><label>{{user.EmailId}}</label></div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-3" style="text-align:left"><label>Role Type</label></div>
+    <div class="col-md-4"><label>{{user.Role}}</label></div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-3" style="text-align:left"><label>Status</label></div>
+    <div class="col-md-4"><label>{{user.status}}</label></div>
+  </div>
+</div>
+<h4>Are you sure you want to delete this User?</h4>
+<button (click)=yesDelete() class="btn">Yes</button>
+                &nbsp;&nbsp;&nbsp;
+<button (click)=noDelete() class="btn">No</button>
+<div class="form-group">
+  <label class="successMsg" *ngIf="status">{{outputMsg}}</label>
+</div>
+
